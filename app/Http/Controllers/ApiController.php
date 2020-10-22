@@ -28,6 +28,6 @@ class ApiController extends Controller
 
     public function getTotalStock()
     {
-        return Store::sum('last_stock');
+        return Store::all()->sum('last_stock');
     }
 }
