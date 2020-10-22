@@ -10,7 +10,7 @@ class Store extends Model
     use HasFactory;
 
     protected $fillable = ['id'];
-    protected $appends = ['currentStock'];
+    protected $appends = ['currentStock', 'address'];
 
     public function getCurrentStockAttribute()
     {
@@ -22,5 +22,14 @@ class Store extends Model
                                   ->where('created_at', $newestDate->created_at)
                                   ->get()
                                   ->sum('stock_level');
+    }
+
+    public function getAddressAttribute()
+    {
+        return strtr('street, postal city', [
+            'street' => $this->street,
+            'postal' => $this->postalCode,
+            'city'   => $this->city,
+        ]);
     }
 }

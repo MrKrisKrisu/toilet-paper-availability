@@ -11,6 +11,9 @@
 
         <div class="row">
             <div class="col-md-12">
+                @include('map')
+            </div>
+            <div class="col-md-12">
                 <table class="table">
                     @foreach(\App\Models\Store::all() as $store)
                         <tr>
