@@ -25,4 +25,9 @@ class ApiController extends Controller
                     ->where('lng', '>', $validated['west'])
                     ->get();
     }
+
+    public function getTotalStock()
+    {
+        return Store::sum('last_stock');
+    }
 }

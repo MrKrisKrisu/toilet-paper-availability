@@ -33,6 +33,10 @@ class CreateStoresTable extends Migration
             $table->decimal('lng', 8, 5)
                   ->nullable()
                   ->default(null);
+            $table->integer('last_stock')
+                  ->unsigned()
+                  ->nullable()
+                  ->default(null);
             $table->timestamp('last_checked')
                   ->nullable()
                   ->default(null);

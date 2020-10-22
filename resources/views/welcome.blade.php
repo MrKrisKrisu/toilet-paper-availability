@@ -6,7 +6,7 @@
             <h1><i class="fas fa-toilet-paper"></i></h1>
             <h2>Klopapier Verfügbarkeit</h2>
             <p class="lead">Keine Panik! Es stehen
-                noch {{number_format(\App\Models\Store::all()->sum('currentStock'), 0, ",", ".")}} Packungen
+                noch <span id="totalStock">___.___</span> Packungen
                 Toilettenpapier zur Verfügung.</p>
         </div>
 
@@ -16,4 +16,12 @@
             </div>
         </div>
     </div>
+    <script>
+        $.ajax({
+            url: '/api/totalStock',
+            success: function (totalStock) {
+                $('#totalStock').html(totalStock);
+            }
+        });
+    </script>
 @endsection

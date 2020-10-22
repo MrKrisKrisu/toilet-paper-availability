@@ -51,6 +51,7 @@ class ProductController extends Controller
             throw new DataParseException();
 
         $currentTimeWithoutSeconds = Carbon::now()->setSeconds(0);
+        $storeStocks = [];
 
         foreach ($data->storeAvailabilities as $productId => $storeAvailability) {
             $product = Product::updateOrCreate(['id' => $productId]);
@@ -65,7 +66,18 @@ class ProductController extends Controller
                                                 'created_at'  => $currentTimeWithoutSeconds,
                                                 'updated_at'  => $currentTimeWithoutSeconds
                                             ]);
+
+                if (isset($storeStocks[$store->id]))
+                    $storeStocks[$store->id] += $availability->stockLevel;
+                else
+                    $storeStocks[$store->id] = $availability->stockLevel;
             }
+        }
+
+        foreach ($storeStocks as $storeId => $stock) {
+            Store::where('id', $storeId)->update([
+                                                     'last_stock' => $stock
+                                                 ]);
         }
     }
 }
