@@ -25,9 +25,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->call(function () {
-            ProductController::fetchAll();
-        })->everyFifteenMinutes();
+        $schedule->command('tpa:fetch')->everyFifteenMinutes();
     }
 
     /**
