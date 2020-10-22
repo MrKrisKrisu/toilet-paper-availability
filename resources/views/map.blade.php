@@ -24,7 +24,7 @@
                 $.each(data, function (i, store) {
                     if (store.id in markers) return;
                     markers[store.id] = L.marker([store.lat, store.lng], {icon: getMarker(store.last_stock)})
-                        .bindPopup('<b>Verfügbarkeit: ' + store.last_stock + ' Packungen</b><br /><hr />' + store.address)
+                        .bindPopup('<b>Verfügbarkeit: ' + store.last_stock + ' Packungen</b><br /><hr />' + store.name + '<br />' + store.address)
                         .addTo(map);
                 });
             }
