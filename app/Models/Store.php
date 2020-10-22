@@ -10,7 +10,7 @@ class Store extends Model
     use HasFactory;
 
     protected $fillable = ['id', 'last_checked', 'last_stock'];
-    protected $hidden = ['street', 'postal_code', 'city', 'last_checked', 'created_at', 'updated_at'];
+    protected $hidden = ['street', 'postal_code', 'city', 'created_at', 'updated_at'];
     protected $appends = ['address'];
 
     public function getAddressAttribute()
