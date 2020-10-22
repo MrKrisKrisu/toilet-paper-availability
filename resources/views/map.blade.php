@@ -23,11 +23,27 @@
             success: function (data) {
                 $.each(data, function (i, store) {
                     if (store.id in markers) return;
-                    markers[store.id] = L.marker([store.lat, store.lng])
+                    markers[store.id] = L.marker([store.lat, store.lng], {icon: getMarker(store.currentStock)})
                         .bindPopup('<b>Verfügbarkeit: ' + store.currentStock + ' Packungen</b><br /><hr />' + store.address)
                         .addTo(map);
                 });
             }
+        });
+    }
+
+    function getLevelFromStock(stock) {
+        if (stock == 0) return 0;
+        if (stock < 10) return 1;
+        if (stock < 50) return 2;
+        if (stock < 100) return 3;
+        return 4;
+    }
+
+    function getMarker(stock) {
+        return L.icon({
+            iconUrl: '/images/icons/toilet-paper-' + getLevelFromStock(stock) + '.png',
+            iconSize: [34, 34],
+            iconAnchor: [17, 17],
         });
     }
 
