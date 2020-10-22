@@ -21,7 +21,7 @@ class CreateStoresTable extends Migration
             $table->string('street')
                   ->nullable()
                   ->default(null);
-            $table->string('postal_code', 5)
+            $table->string('postal_code')
                   ->nullable()
                   ->default(null);
             $table->string('city')
@@ -31,6 +31,9 @@ class CreateStoresTable extends Migration
                   ->nullable()
                   ->default(null);
             $table->decimal('lng', 8, 5)
+                  ->nullable()
+                  ->default(null);
+            $table->timestamp('last_checked')
                   ->nullable()
                   ->default(null);
             $table->timestamps();

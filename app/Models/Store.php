@@ -9,7 +9,7 @@ class Store extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['id'];
+    protected $fillable = ['id', 'last_checked'];
     protected $appends = ['currentStock', 'address'];
 
     public function getCurrentStockAttribute()

@@ -15,7 +15,7 @@ class ProductController extends Controller
 {
     public static function fetchAll()
     {
-        $stores = Store::all()->pluck('id')->toArray();
+        $stores = Store::orderBy('last_checked', 'ASC')->limit(200)->get()->pluck('id')->toArray();
         $storeString = implode(',', $stores);
 
         $products = Product::all()->pluck('id')->toArray();
@@ -27,6 +27,7 @@ class ProductController extends Controller
         ]);
 
         $client = new Client();
+
         try {
             $res = $client->get($url);
 
@@ -49,8 +50,13 @@ class ProductController extends Controller
 
         foreach ($data->storeAvailabilities as $productId => $storeAvailability) {
             $product = Product::updateOrCreate(['id' => $productId]);
+            echo "Produkt $productId \r\n";
             foreach ($storeAvailability as $availability) {
-                $store = Store::updateOrCreate(['id' => $availability->store->storeNumber]);
+                $store = Store::updateOrCreate([
+                                                   'id' => $availability->store->storeNumber
+                                               ], [
+                                                   'last_checked' => Carbon::now()
+                                               ]);
 
                 ProductAvailability::create([
                                                 'store_id'    => $store->id,
