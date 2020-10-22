@@ -13,16 +13,6 @@
             <div class="col-md-12">
                 @include('map')
             </div>
-            <div class="col-md-12">
-                <table class="table">
-                    @foreach(\App\Models\Store::all() as $store)
-                        <tr>
-                            <td>{{$store->id}}</td>
-                            <td>{{$store->currentStock}} Packungen verfügbar</td>
-                        </tr>
-                    @endforeach
-                </table>
-            </div>
         </div>
     </div>
 @endsection

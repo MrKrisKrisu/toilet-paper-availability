@@ -10,6 +10,7 @@ class Store extends Model
     use HasFactory;
 
     protected $fillable = ['id', 'last_checked'];
+    protected $hidden = ['street', 'postal_code', 'city', 'last_checked', 'created_at', 'updated_at'];
     protected $appends = ['currentStock', 'address'];
 
     public function getCurrentStockAttribute()
