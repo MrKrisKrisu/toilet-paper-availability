@@ -10,13 +10,17 @@ use Carbon\Carbon;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
     public static function fetchAll()
     {
-        $stores = Store::orderBy('last_checked', 'ASC')->limit(200)->get()->pluck('id')->toArray();
-        $storeString = implode(',', $stores);
+        $stores = Store::orderBy('last_checked', 'ASC')->limit(200)->get();
+        DB::table('stores')->whereIn('id', $stores->pluck('id'))->update([
+                                                                             'last_checked' => Carbon::now()
+                                                                         ]);
+        $storeString = implode(',', $stores->pluck('id')->toArray());
 
         $products = Product::all()->pluck('id')->toArray();
         $productString = implode(',', $products);
@@ -52,11 +56,7 @@ class ProductController extends Controller
             $product = Product::updateOrCreate(['id' => $productId]);
             echo "Produkt $productId \r\n";
             foreach ($storeAvailability as $availability) {
-                $store = Store::updateOrCreate([
-                                                   'id' => $availability->store->storeNumber
-                                               ], [
-                                                   'last_checked' => Carbon::now()
-                                               ]);
+                $store = Store::updateOrCreate(['id' => $availability->store->storeNumber]);
 
                 ProductAvailability::create([
                                                 'store_id'    => $store->id,
