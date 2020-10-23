@@ -21,3 +21,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/stores', [ApiController::class, 'fetchBbox']);
 Route::get('/totalStock', [ApiController::class, 'getTotalStock']);
+Route::get('/historyStock/{id}', [ApiController::class, 'getHistoryStock']);

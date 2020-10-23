@@ -30,7 +30,8 @@
                             '<b>Verfügbarkeit: ' + store.last_stock + ' Packungen</b>' +
                             '<br /><hr />' + store.name + '' +
                             '<br />' + store.address +
-                            '<br /> Zuletzt aktualisiert: ' + store.last_checked
+                            '<br /> Zuletzt aktualisiert: ' + store.last_checked +
+                            '<hr /><a href="/store/' + store.id + '">Details anzeigen</a>'
                         )
                         .addTo(map);
                 });

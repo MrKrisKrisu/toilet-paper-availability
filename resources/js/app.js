@@ -7,6 +7,8 @@
 require('./bootstrap');
 require('leaflet');
 require('leaflet-hash');
+require('moment');
+window.Chart = require('chart.js');
 
 //window.Vue = require('vue');
 

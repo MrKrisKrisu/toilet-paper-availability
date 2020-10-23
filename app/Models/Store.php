@@ -12,6 +12,7 @@ class Store extends Model
     protected $fillable = ['id', 'last_checked', 'last_stock'];
     protected $hidden = ['street', 'postal_code', 'city', 'created_at', 'updated_at'];
     protected $appends = ['address'];
+    protected $dates = ['last_checked'];
 
     public function getAddressAttribute()
     {
@@ -20,5 +21,10 @@ class Store extends Model
             'postal' => $this->postalCode,
             'city'   => $this->city,
         ]);
+    }
+
+    public function productAvailabilities()
+    {
+        return $this->hasMany(ProductAvailability::class, 'store_id', 'id');
     }
 }
