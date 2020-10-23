@@ -13,6 +13,7 @@
     }).addTo(map);
 
     map.on('dragend', loadMap);
+    map.on('zoomend', loadMap);
 
     function loadMap() {
         $.ajax({
