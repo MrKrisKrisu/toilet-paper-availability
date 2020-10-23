@@ -5,6 +5,7 @@
 
     var map = L.map('mapid').setView([52.37707, 9.73811], 13);
     var markers = [];
+    var hash = new L.Hash(map);
 
     L.tileLayer('https://osmcache.k118.de/carto/{z}/{x}/{y}.png', {
         maxZoom: 18,

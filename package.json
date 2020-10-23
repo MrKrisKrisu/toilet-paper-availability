@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.1",
-        "leaflet": "^1.7.1"
+        "leaflet": "^1.7.1",
+        "leaflet-hash": "^0.2.1"
     }
 }
