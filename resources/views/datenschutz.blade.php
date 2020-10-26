@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="py-5">
-            <h1>Impressum</h1>
+            <h1>Datenschutzerklärung</h1>
             <a href="/">Zurück zur Startseite</a>
             <h2>Einleitung</h2>
             <p>Mit der folgenden Datenschutzerklärung möchten wir Sie darüber aufklären, welche Arten Ihrer
