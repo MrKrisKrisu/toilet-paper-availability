@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StoreController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,3 +24,5 @@ Route::view('/imprint', 'imprint')
 
 Route::get('/store/{id}', [StoreController::class, 'renderStore'])
      ->name('store');
+
+Route::get('/sitemap', [HomeController::class, 'renderSitemap']);
