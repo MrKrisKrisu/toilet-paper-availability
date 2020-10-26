@@ -21,6 +21,8 @@ Route::get('/', function () {
 
 Route::view('/imprint', 'imprint')
      ->name('imprint');
+Route::view('/datenschutz', 'datenschutz')
+     ->name('datenschutz');
 
 Route::get('/store/{id}', [StoreController::class, 'renderStore'])
      ->name('store');

@@ -29,6 +29,7 @@
                         <a href="https://github.com/MrKrisKrisu/toilet-paper-availability" target="_blank">Github</a>
                     </li>
                     <li class="list-inline-item"><a href="{{route('imprint')}}">Impressum</a></li>
+                    <li class="list-inline-item"><a href="{{route('datenschutz')}}">Datenschutz</a></li>
                 </ul>
             </footer>
         </div>
