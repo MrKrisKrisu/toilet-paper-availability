@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title') Klopapier Verfügbarkeit in {{$store->postal_code}} {{$store->city}}@endsection
+
+@section('meta-description')Aktuelle Klopapier Verfügbarkeit im {{$store->name}} in {{$store->address}} und Entwicklung der letzten Tage. @endsection
+
 @section('content')
     <div class="container">
         <div class="py-5 text-center">

@@ -18,7 +18,7 @@ class Store extends Model
     {
         return strtr('street, postal city', [
             'street' => $this->street,
-            'postal' => $this->postalCode,
+            'postal' => $this->postal_code,
             'city'   => $this->city,
         ]);
     }
