@@ -16,5 +16,6 @@ public/css/app.css
 public/images/vendor/leaflet/dist/layers-2x.png
 public/images/vendor/leaflet/dist/layers.png
 public/images/vendor/leaflet/dist/marker-icon.png
+public/fonts/*
 database/seeders/dmstores.json
 .idea/

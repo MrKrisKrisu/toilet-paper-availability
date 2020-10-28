@@ -1,6 +1,13 @@
 <div id="mapid" style="width: 100%; height: 500px;"></div>
 <script>
 
+    $('#locate-btn').click(function() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                map.flyTo([position.coords.latitude, position.coords.longitude], 13);
+            });
+        }
+    });
     $(document).ready(loadMap);
 
     var map = L.map('mapid').setView([52.37707, 9.73811], 13);
