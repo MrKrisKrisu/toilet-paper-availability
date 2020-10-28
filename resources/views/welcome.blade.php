@@ -8,6 +8,8 @@
             <p class="lead">Keine Panik! Es stehen
                 noch <span id="totalStock">___.___</span> Packungen
                 Toilettenpapier zur Verfügung.</p>
+            <p></p>
+            <p class="mb-0"><button id="locate-btn" class="btn btn-dark mb-0"><i class="fas fa-location-arrow"></i> Position feststellen</button></p>
         </div>
 
         <div class="row">
