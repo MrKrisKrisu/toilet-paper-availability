@@ -15,9 +15,11 @@ You'll need Composer and PHP >= 7.3.
 
 Just pull the repo and run the following commands:
 
-- ```composer install```
-- ```php artisan key:generate```
-- ```php artisan migrate```
+- `composer install`
+- `php artisan key:generate`
+- `wget -O database/seeders/dmstores.json https://store-data-service.services.dmtech.com/stores/bbox/49.091271000000745%2C7.276695738013274%2C49.002137000001056%2C9.56446326198315` 
+- `php artisan migrate --seed`
+- `php artisan tpa:fetch`
 
 To pull the data you need to set up a cronjob which will call ```php artisan schedule:run``` every minute.
 
