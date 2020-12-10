@@ -18,3 +18,8 @@ public/images/vendor/leaflet/dist/layers.png
 public/images/vendor/leaflet/dist/marker-icon.png
 database/seeders/dmstores.json
 .idea/
+public/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.woff2
+public/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.woff
+public/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.ttf
+public/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.svg
+public/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.eot
