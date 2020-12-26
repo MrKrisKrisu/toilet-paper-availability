@@ -1,9 +1,9 @@
 <div id="mapid" style="width: 100%; height: 500px;"></div>
 <script>
 
-    $('#locate-btn').click(function() {
+    $('#locate-btn').click(function () {
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
+            navigator.geolocation.getCurrentPosition(function (position) {
                 map.flyTo([position.coords.latitude, position.coords.longitude], 13);
             });
         }
