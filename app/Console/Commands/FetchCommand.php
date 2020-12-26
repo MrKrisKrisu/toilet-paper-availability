@@ -5,8 +5,7 @@ namespace App\Console\Commands;
 use App\Http\Controllers\ProductController;
 use Illuminate\Console\Command;
 
-class FetchCommand extends Command
-{
+class FetchCommand extends Command {
     /**
      * The name and signature of the console command.
      *
@@ -26,8 +25,7 @@ class FetchCommand extends Command
      *
      * @return void
      */
-    public function __construct()
-    {
+    public function __construct() {
         parent::__construct();
     }
 
@@ -36,8 +34,7 @@ class FetchCommand extends Command
      *
      * @return int
      */
-    public function handle()
-    {
+    public function handle() {
         ProductController::fetchAll();
         return 0;
     }
