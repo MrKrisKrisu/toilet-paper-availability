@@ -1,5 +1,5 @@
 <hr/>
-<h2>Wie viel Toilettenpapier haben alle DM Filialen* zusammen?</h2>
+<h2>Wie viel Toilettenpapier haben alle <i>dm</i> Filialen* zusammen?</h2>
 <canvas id="chartHistory" style="width: 100%; height: 400px;"></canvas>
 <small class="text-muted">*Es wird der Lagerbestand von allen Filialen in Deutschland kummuliert, die diesen online
     bereitstellen.</small>
