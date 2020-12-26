@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DailyStock;
 use App\Models\Store;
-use Illuminate\Http\Request;
+use Carbon\Carbon;
 
-class StoreController extends Controller
-{
-    public function renderStore($id)
-    {
+class StoreController extends Controller {
+    public function renderStore($id) {
+
         $store = Store::findOrFail($id);
 
         return view('store', [
