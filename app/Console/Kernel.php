@@ -25,7 +25,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('tpa:fetch')->everyFiveMinutes();
+        $schedule->command('tpa:fetch')->everyFifteenMinutes();
     }
 
     /**
