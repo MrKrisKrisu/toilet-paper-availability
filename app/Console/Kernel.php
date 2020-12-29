@@ -26,7 +26,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('tpa:fetch')->everyFifteenMinutes();
-        $schedule->command('tpa:dailystock')->dailyAt("00:10");
+        $schedule->command('tpa:dailystock')->daily();
     }
 
     /**
