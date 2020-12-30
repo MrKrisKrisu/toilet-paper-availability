@@ -14,6 +14,7 @@
         @hasSection('meta-description')
             <meta name="description" value="@yield('meta-description')"/>
         @endif
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.svg">
     </head>
     <body>
         <div id="app">
